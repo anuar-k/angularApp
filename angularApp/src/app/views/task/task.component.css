@@ -1,0 +1,8 @@
+.noValue {
+    color: #797979;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #797979;
+}

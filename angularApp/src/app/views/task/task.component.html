@@ -23,26 +23,41 @@
             <tbody>
             <tr *ngFor="let task of tasks; let i = index">
                 <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> {{i + 1}}</span>
+                    <span class="text-xs font-weight-bold"> {{++i}}</span>
                 </td>
                 <td>
                     <div class="d-flex px-2 py-1 text-center">
                         <div class="d-flex flex-column justify-content-center ">
-                            <h6 class="mb-0 text-sm">{{task.title}}</h6>
+                            <h6 class="mb-0 text-sm"
+                                [class.completed]="task.completed"
+                            >{{task.title}}
+                            </h6>
                         </div>
                     </div>
                 </td>
                 <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold  text-center"> {{task.completed ? 'завершен' : 'не завершен'}}</span>
+                    <span class="text-xs font-weight-bold"
+                          [style]="task.priority !== null ? 'color: #797979': 'none'"
+                    > {{task.category !== null ? task.category?.title : 'Без категории'}}</span>
                 </td>
                 <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> {{task.priority?.title}}</span>
+                    <span class="text-xs font-weight-bold"
+                          [style]="task.category !== null ? 'color: #797979': 'none'"
+                    >
+                        {{task.priority !== null ? task.priority?.title : 'Без приоритета'}}
+                    </span>
                 </td>
                 <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> - </span>
+                    <input class="custom-checkbox mt-1 ms-auto"
+                           type="checkbox" id="navbarFixed"
+                           [checked]="task.completed"
+                           (click)="toggleTaskCompeted(task)"
+                    >
                 </td>
                 <td class="align-middle text-center text-sm">
-                    <span class="text-xs font-weight-bold"> {{task.date?.toDateString()}}</span>
+                    <span class="text-xs font-weight-bold noValue"
+                          [style]="task.date !== null ? 'color: #797979': 'none'"
+                    > {{task.date !== null ? (task.date | date: 'dd-MM-yyyy') : 'Без даты'}}</span>
                 </td>
             </tr>
             </tbody>

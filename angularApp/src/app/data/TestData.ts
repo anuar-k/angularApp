@@ -28,5 +28,6 @@ export class TestData {
         {id: 2, title: 'Сделать отчеты', category: TestData.categories[1], priority: TestData.priorities[2], completed: false, date: new Date('2023-12-11')},
         {id: 3, title: 'Сходить в парк', category: TestData.categories[2], priority: TestData.priorities[3], completed: true, date: new Date('2021-10-29')},
         {id: 4, title: 'Пригласить друзей', category: TestData.categories[3], priority: TestData.priorities[1], completed: true, date: new Date('2020-08-09')},
+        {id: 4, title: 'Сделать что то', category: null, priority: null, completed: false, date: null},
     ]
 }
