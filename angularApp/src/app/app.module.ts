@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {CategoriesComponent} from "./views/categories/categories.component";
 import {AppComponent} from "./app.component";
+import {TaskComponent} from "./views/task/task.component";
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import {AppComponent} from "./app.component";
   ],
   imports: [
     BrowserModule,
-    CategoriesComponent
+    CategoriesComponent,
+    TaskComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

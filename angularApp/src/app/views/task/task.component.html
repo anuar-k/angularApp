@@ -1,0 +1,42 @@
+<div class="card-body px-12 pb-2 my-3">
+  <div class="table-responsive">
+    <table class="table align-items-center mb-0">
+      <thead>
+      <tr>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">ID</th>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Название</th>
+        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2 text-center">Категория</th>
+        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Приоритет</th>
+        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Статус</th>
+        <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">Дата</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let task of tasks; let i = index">
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs font-weight-bold"> {{i + 1}}</span>
+        </td>
+        <td>
+          <div class="d-flex px-2 py-1 text-center">
+            <div class="d-flex flex-column justify-content-center ">
+              <h6 class="mb-0 text-sm">{{task.title}}</h6>
+            </div>
+          </div>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs font-weight-bold"> {{task.completed ? 'завершен' : 'не завершен'}}</span>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs font-weight-bold"> {{task.priority?.title}}</span>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs font-weight-bold"> {{task.priorit}}</span>
+        </td>
+        <td class="align-middle text-center text-sm">
+          <span class="text-xs font-weight-bold"> {{task.date}}</span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
